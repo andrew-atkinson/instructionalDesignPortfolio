@@ -37,7 +37,7 @@ function renderNav(rootPath, activePage, siteConfig) {
   ];
 
   const links = navItems.map(item => {
-    const href    = item.href || (rootPath + item.slug + "/");
+    const href    = rootPath + item.slug + "/";
     const isActive = activePage === item.slug;
     return `<li><a href="${href}"${isActive ? ' class="active"' : ""}>${item.label || item.slug}</a></li>`;
   }).join("\n        ");
