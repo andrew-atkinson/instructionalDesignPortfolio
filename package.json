@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "Andrew Atkinson — Instructional Design Portfolio",
   "scripts": {
-    "build": "node src/md-to-portfolio.js",
-    "build:page": "node src/md-to-portfolio.js"
+    "build":      "node src/md-to-portfolio.js && node src/html-to-pdf.js",
+    "build:page": "node src/md-to-portfolio.js",
+    "pdf":        "node src/html-to-pdf.js",
+    "pdf:page":   "node src/html-to-pdf.js"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "puppeteer-core": "^25.0.4"
+  }
 }

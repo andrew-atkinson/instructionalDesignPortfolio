@@ -404,3 +404,74 @@ a:hover { color: var(--link-hover); }
   .site-wrap { padding: 0 var(--space-md); }
   .case-meta .pdf-link { margin-left: 0; }
 }
+
+/* ── Print / PDF ── */
+@media print {
+  /* White background throughout — no warm tint */
+  html, body { background: white !important; }
+  :root {
+    --bg:      white;
+    --surface: white;
+    --tag-bg:  #efefef;
+  }
+  pre, code { background: #efefef !important; }
+
+  /* Hide navigation chrome */
+  .site-nav,
+  .site-footer,
+  .case-meta .pdf-link { display: none !important; }
+
+  /* Full width, no side padding */
+  .site-wrap { max-width: 100%; padding: 0; }
+
+  /* Show hero and content images */
+  .page-hero { display: block; }
+  .page-hero img {
+    max-height: 280px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .content-figure img { width: 100%; }
+
+  /* Expand all accordion sections */
+  .accordion-body {
+    max-height: none !important;
+    overflow: visible !important;
+    padding-bottom: 1.5rem !important;
+  }
+  .trigger-icon { display: none; }
+
+  /* Single clean borders — prevent double-line effect */
+  .accordion       { border-top: 1px solid #ccc; }
+  .accordion-item  { border-bottom: 1px solid #ccc; }
+  .case-meta       { border-color: #ccc; }
+
+  /* Page break control */
+  .accordion-item,
+  .case-meta          { page-break-inside: avoid; break-inside: avoid; }
+  .content-figure     { page-break-inside: avoid; break-inside: avoid; }
+  /* Keep section title with at least the opening of its content */
+  .accordion-trigger  { page-break-after: avoid; break-after: avoid; }
+  .accordion-content  { page-break-before: avoid; break-before: avoid; }
+  /* Allow long sections to break naturally across pages */
+  .accordion-content p,
+  .accordion-content li { page-break-inside: auto; break-inside: auto; }
+
+  /* Keep headings with the content that follows */
+  h1, h2, h3, h4 { page-break-after: avoid; break-after: avoid; }
+
+  /* Sensible type size for print */
+  html { font-size: 12pt; }
+  h1   { font-size: 2rem; }
+
+  /* Remove box shadows */
+  .work-card { box-shadow: none; border-color: #ccc; }
+
+  /* URLs visible after external links */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    color: #666;
+  }
+  .ext-icon { display: none; }
+}

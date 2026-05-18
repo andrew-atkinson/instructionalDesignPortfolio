@@ -54,13 +54,37 @@ instructionalDesignPortfolio/
 npm run build
 ```
 
-Rebuilds all pages from scratch. Output goes to the folders at the project root.
+Rebuilds all pages from scratch and generates PDFs for every case study. Output goes to the folders at the project root; PDFs go to `pdf/`.
 
-To rebuild a single page:
+To rebuild a single page (HTML only, no PDF):
 
 ```bash
 node src/md-to-portfolio.js src/content/earth-day.md
 ```
+
+---
+
+## PDF export
+
+```bash
+npm run pdf
+```
+
+Generates a PDF for every case study listed in `src/site.md # Work`, saved to the `pdf/` folder. Requires Google Chrome or Chromium installed locally — the script finds it automatically in the standard macOS and Linux locations.
+
+To export a single case study:
+
+```bash
+npm run pdf:page cc-series
+```
+
+If Chrome is installed in a non-standard location, set the `CHROME_PATH` environment variable:
+
+```bash
+CHROME_PATH="/path/to/chrome" npm run pdf
+```
+
+PDFs are generated from the built HTML pages, so always run `npm run build` before `npm run pdf` to make sure the output is current. All accordion sections are automatically expanded in the PDF regardless of their default open/closed state on the web page.
 
 ---
 
