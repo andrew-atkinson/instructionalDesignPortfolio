@@ -6,6 +6,7 @@ type: case-study
 client: Vidcode
 year: 2017–2019
 tags: [curriculum-design, standards-alignment, K-12, javascript, professional-development]
+hero: assets/images/students-collaborating.png
 ---
 
 # Overview
@@ -30,6 +31,8 @@ The three courses form a deliberate arc:
 
 **Creative Coding 3** moves into more advanced territory: user interface design, algorithmic thinking, and data modeling. By this point students are building more complex, self-directed work and engaging with computer science concepts that connect directly to how software is built in the real world.
 
+![The Vidcode platform: code editor alongside live project preview](assets/images/cc-platform-ui.png)
+
 ## Unit Structure
 
 Each unit in the series followed a consistent internal structure that balanced guidance with creative freedom.
@@ -46,9 +49,15 @@ Units were also framed using a DO / KNOW / BELIEVE / WONDER structure that treat
 
 Each unit also identified **common preconceptions** to address directly; for example, the assumption that computers automatically respond to user input without any code to handle it, or that art and programming have nothing to do with each other.
 
+![Course structure: Courses lead to Units, which contain Tutorials, Practices, Assessment, and Final Projects](assets/images/cc-course-architecture.png)
+
 ## My Contributions
 
 **Tutorial and lesson writing.** I wrote and edited learner-facing tutorial content: the step-by-step instructions students worked through on the platform. This involved close attention to voice, pacing, and the sequencing of reveals: which detail to give now, which to defer, and how to frame a new concept so it connected to something the student already understood. Good tutorial writing for beginners is not the same as clear technical documentation; it has to carry emotional register as well as informational content.
+
+![Student project: Stopmotion Frog, using arrays to sequence frames into animation](assets/images/cc-stopmotion-project.png)
+
+![Student project: Watermelon, introducing arrays through a bilingual language exercise](assets/images/cc-watermelon-project.png)
 
 **Curriculum review.** I conducted a detailed review of the Creative Coding 2 course, producing written notes on the conceptual arc across units, the consistency of the hint system, platform UX issues that affected the learning experience, asset choices, naming conventions in the codebase, and places where the curriculum's implicit assumptions about prior knowledge needed to be made explicit. This kind of close reading, looking at a curriculum both as a learner moving through it and as a designer assessing its internal logic, is a distinct form of design work.
 

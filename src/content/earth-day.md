@@ -6,6 +6,7 @@ type: case-study
 client: Vidcode
 year: 2018
 tags: [lesson-design, standards-alignment, social-impact, hour-of-code]
+hero: assets/images/student-laptop.png
 ---
 
 # Overview
@@ -43,6 +44,8 @@ Students work through the Vidcode tutorial in pairs. Pairing is deliberate: it r
 The tutorial moves through: adding a video backdrop, applying visual filters, creating an array of plastic emoji chosen by the student, writing a while loop to display them, using Math.random() to scatter and resize them across the screen, and adding text overlays with an environmental message.
 
 The progression is careful. Each concept introduced is immediately used to do something visible and satisfying. Arrays are introduced not as an abstract data structure but as *a list of the plastic things you throw away*. Loops are introduced as the thing that makes twenty pieces of garbage appear instead of one. Math.random() is introduced as the thing that makes the pollution look messy and real instead of tidy and fake.
+
+![Student project: The Earth Guys, built in the Earth Day tutorial environment](assets/images/earth-day-student-project.png)
 
 **Extend (embedded in Explore)**
 As students finish, a class discussion prompt pulls the work back out: a student project goes on the board, and the class is asked what each line of code controls, and what a loop does. This surfaces the underlying concepts without requiring students to have absorbed them all individually first.

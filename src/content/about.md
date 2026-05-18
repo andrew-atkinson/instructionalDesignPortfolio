@@ -1,6 +1,7 @@
 ---
 title: About
 type: about
+portrait: assets/images/atkinson-portrait.jpg
 ---
 
 # About

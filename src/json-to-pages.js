@@ -18,6 +18,15 @@
 const fs   = require("fs");
 const path = require("path");
 
+// ── Asset path resolver ───────────────────────────────────────────────────────
+// Inline HTML from the parser uses root-relative paths like assets/images/...
+// This rewrites them to be correct relative to the current page depth.
+
+function resolveAssets(html, rootPath) {
+  if (!html) return html;
+  return html.replace(/\bsrc="assets\//g, `src="${rootPath}assets/`);
+}
+
 // ── Nav HTML ──────────────────────────────────────────────────────────────────
 
 function renderNav(rootPath, activePage, siteConfig) {
@@ -116,17 +125,18 @@ function buildHomePage(json, options = {}) {
       .map(slug => {
         const page = allPages[slug];
         const m    = page.json.meta;
-        const title = m.title || slug;
-        const desc  = m.description || m.subtitle || "";
-        const href  = rootPath + slug + "/";
-        return { title, desc, href };
+        const title  = m.title || slug;
+        const desc   = m.description || m.subtitle || "";
+        const client = m.client || "";
+        const href   = rootPath + slug + "/";
+        return { title, desc, client, href };
       });
 
     if (cards.length) {
       workCards = `<div class="work-grid">` +
         cards.map(c => `
       <a class="work-card" href="${c.href}">
-        <div class="card-eyebrow">Case Study</div>
+        <div class="card-eyebrow">Case Study${c.client ? ` · ${c.client}` : ""}</div>
         <div class="card-title">${c.title}</div>
         <div class="card-desc">${c.desc}</div>
         <span class="card-arrow">View project →</span>
@@ -135,7 +145,10 @@ function buildHomePage(json, options = {}) {
     }
   }
 
-  const introHtml = intro ? intro.html : "";
+  const introHtml = resolveAssets(intro ? intro.html : "", rootPath);
+  const heroHtml  = meta.hero
+    ? `<div class="page-hero"><img src="${rootPath}${meta.hero}" alt="${meta.title}"></div>`
+    : "";
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -157,6 +170,8 @@ function buildHomePage(json, options = {}) {
       ${meta.subtitle ? `<p class="subtitle">${meta.subtitle}</p>` : ""}
     </header>
 
+    ${heroHtml}
+
     <div class="page-intro">
       ${introHtml}
     </div>
@@ -176,6 +191,11 @@ function buildAboutPage(json, options = {}) {
   const { rootPath = "../", siteConfig } = options;
   const { meta, intro } = json;
   const siteTitle = (siteConfig && siteConfig.title) || "Andrew Atkinson";
+
+  const portraitHtml = meta.portrait
+    ? `<img class="about-portrait" src="${rootPath}${meta.portrait}" alt="Andrew Atkinson">`
+    : "";
+  const introHtml = resolveAssets(intro ? intro.html : "", rootPath);
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -197,7 +217,8 @@ function buildAboutPage(json, options = {}) {
     </header>
 
     <div class="about-body">
-      ${intro ? intro.html : ""}
+      ${portraitHtml}
+      ${introHtml}
     </div>
 
     <footer class="site-footer">
@@ -212,6 +233,13 @@ function buildCaseStudyPage(json, options = {}) {
   const { rootPath = "../", pdfPath, activePage, siteConfig } = options;
   const { meta, intro, sections } = json;
   const siteTitle = (siteConfig && siteConfig.title) || "Andrew Atkinson";
+
+  const heroHtml = meta.hero
+    ? `<div class="page-hero"><img src="${rootPath}${meta.hero}" alt="${meta.title}"></div>`
+    : "";
+
+  const introHtml    = resolveAssets(intro ? intro.html : "", rootPath);
+  const resolvedSecs = sections.map(s => ({ ...s, html: resolveAssets(s.html, rootPath) }));
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -234,11 +262,13 @@ function buildCaseStudyPage(json, options = {}) {
       ${meta.subtitle ? `<p class="subtitle">${meta.subtitle}</p>` : ""}
     </header>
 
+    ${heroHtml}
+
     ${renderCaseMeta(meta, pdfPath)}
 
-    ${intro ? `<div class="page-intro">${intro.html}</div>` : ""}
+    ${introHtml ? `<div class="page-intro">${introHtml}</div>` : ""}
 
-    ${renderAccordion(sections)}
+    ${renderAccordion(resolvedSecs)}
 
     <footer class="site-footer">
       <p>Andrew Atkinson · Instructional Design Portfolio</p>

@@ -342,12 +342,57 @@ a:hover { color: var(--link-hover); }
   color: var(--text-muted);
 }
 
+/* ── Hero image ── */
+.page-hero {
+  margin-bottom: var(--space-xl);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.page-hero img {
+  width: 100%;
+  display: block;
+  max-height: 420px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* ── Inline content figures ── */
+.content-figure {
+  margin: var(--space-lg) 0;
+}
+.content-figure img {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
 /* ── About page ── */
 .about-body {
   max-width: 640px;
   font-size: 1.05rem;
 }
 .about-body p { margin-bottom: var(--space-lg); }
+.about-body::after { content: ""; display: table; clear: both; }
+
+.about-portrait {
+  float: left;
+  width: 200px;
+  margin: 0.25rem var(--space-xl) var(--space-lg) 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 500px) {
+  .about-portrait {
+    float: none;
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto var(--space-lg);
+  }
+}
 
 /* ── Responsive ── */
 @media (max-width: 600px) {

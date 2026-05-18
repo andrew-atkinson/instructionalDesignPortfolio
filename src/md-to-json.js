@@ -245,6 +245,16 @@ function renderBody(md) {
       continue;
     }
 
+    // image
+    const imgMatch = line.match(/^!\[([^\]]*)\]\(([^)]+)\)/);
+    if (imgMatch) {
+      flushPara(); flushUl(); flushOl();
+      const alt = escapeHtml(imgMatch[1]);
+      const src = escapeHtml(imgMatch[2]);
+      out.push(`<figure class="content-figure"><img src="${src}" alt="${alt}" loading="lazy"></figure>`);
+      continue;
+    }
+
     // horizontal rule
     if (/^---+$/.test(line.trim())) {
       flushPara(); flushUl(); flushOl();
