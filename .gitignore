@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Generated JSON (rebuilt by the pipeline — don't track)
+src/data
+
+# originating materials - not need on repo
+/content/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment
+.env
+.env.local
+
+# Logs
+npm-debug.log*

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Coding Series · Andrew Atkinson</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="site-wrap">
+    
+  <nav class="site-nav">
+    <a class="nav-home" href="../index.html">Andrew Atkinson</a>
+    <ul class="nav-links">
+      <li><a href="../about/">About</a></li>
+    </ul>
+  </nav>
+
+    <header class="page-header">
+      <p class="eyebrow">Case Study</p>
+      <h1>Creative Coding Series</h1>
+      <p class="subtitle">CC1–CC3</p>
+    </header>
+
+    <div class="case-meta">
+    <div class="meta-item">
+      <span class="meta-label">Client</span>
+      <span class="meta-value">Vidcode</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Year</span>
+      <span class="meta-value">2017–2019</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Tags</span>
+      <div class="meta-tags"><span class="tag">curriculum-design</span>
+        <span class="tag">standards-alignment</span>
+        <span class="tag">K-12</span>
+        <span class="tag">javascript</span>
+        <span class="tag">professional-development</span></div>
+    </div><a class="pdf-link" href="../pdf/cc-series.pdf" target="_blank">Download PDF ↓</a></div>
+
+    <div class="page-intro"><p>The Creative Coding Series was Vidcode's core K–12 curriculum: three sequential courses teaching JavaScript through creative, project-based work. The courses were designed to be taught by educators with no programming background and to fit into any subject area: art, history, or science, or a dedicated computing elective. My contributions spanned tutorial writing, curriculum review, standards alignment, and the adaptation of course material for two external partners: Girl Scouts USA and BrainPOP.</p></div>
+
+    <div class="accordion" role="list">
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="true" aria-controls="sec-0">
+        <span class="trigger-title">The Design Premise</span>
+        <span class="trigger-icon" aria-hidden="true">−</span>
+      </button>
+      <div class="accordion-body open" id="sec-0" role="region">
+        <div class="accordion-content">
+          <p>Vidcode was built on a specific and considered belief: that creativity is not a distraction from learning to code, but the mechanism through which students actually learn. Every project in the series produced something students could show someone else: a video filter, an animation, a game, an interactive portrait. The output was always real, always shareable, and theirs.</p>
+<p>This had direct implications for curriculum design. The choice of which code concept to introduce next was never purely a question of logical dependency (you need variables before loops). It was also a question of what that concept could do for a student expressively, right now. Arrays were introduced through the experience of building a list of things that mattered to the student. Randomness was introduced as a way to make things feel alive rather than mechanical. The technology and the creative act were kept in alignment throughout.</p>
+<p>The other central design premise was teacher accessibility. A teacher who couldn't code needed to be able to run these lessons without becoming a liability in the room. This shaped everything from the platform's interface to the lesson plan format to the way hints were structured; the goal was always to keep the teacher in a facilitative role, not a technical one.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false" aria-controls="sec-1">
+        <span class="trigger-title">Course Architecture</span>
+        <span class="trigger-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="accordion-body" id="sec-1" role="region">
+        <div class="accordion-content">
+          <p>The three courses form a deliberate arc:</p>
+<p><strong>Creative Coding 1</strong> introduces the foundational concepts of JavaScript programming (variables, functions, basic control flow) through short, approachable projects. Students produce their first lines of working code and build the confidence and vocabulary needed to go further.</p>
+<p><strong>Creative Coding 2</strong> deepens and extends that foundation across four units, each organized around a thematic and technical focus: interactivity (event listeners, logical operators), procedural art (loops, functions), language and data (string manipulation, parameters), and creative culmination (combining control structures in open-ended projects). Each unit runs approximately ten hours of instruction.</p>
+<p><strong>Creative Coding 3</strong> moves into more advanced territory: user interface design, algorithmic thinking, and data modeling. By this point students are building more complex, self-directed work and engaging with computer science concepts that connect directly to how software is built in the real world.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false" aria-controls="sec-2">
+        <span class="trigger-title">Unit Structure</span>
+        <span class="trigger-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="accordion-body" id="sec-2" role="region">
+        <div class="accordion-content">
+          <p>Each unit in the series followed a consistent internal structure that balanced guidance with creative freedom.</p>
+<p><strong>Tutorials</strong> introduced new concepts through guided projects. Steps were written in a conversational, direct voice aimed at the student, not at the teacher. Each instruction moved the project forward visibly, so students experienced continuous momentum rather than extended stretches of abstract instruction.</p>
+<p><strong>Practices</strong> reinforced concepts students had already encountered and asked them to make connections across what they'd learned. These were less tightly scaffolded than tutorials, requiring students to transfer skills rather than follow steps.</p>
+<p><strong>Creative Coding Challenges</strong> gave students open-ended prompts to build something new using the unit's concepts. There was no single correct output. The constraint was conceptual, not aesthetic.</p>
+<p><strong>Quizzes</strong> tested students' ability to read code and accurately describe what it does, which is a distinct and undervalued skill from writing code.</p>
+<p>Units were also framed using a DO / KNOW / BELIEVE / WONDER structure that treated learning goals as more than skills acquisition. <em>Do</em> captured procedural competencies. <em>Know</em> captured conceptual understanding. <em>Believe</em> captured dispositions; the unit on interactivity, for instance, asked students to believe that giving and receiving feedback is a normal and valuable part of making things. <em>Wonder</em> articulated the questions the unit was designed to open up, not close down.</p>
+<p>Each unit also identified <strong>common preconceptions</strong> to address directly; for example, the assumption that computers automatically respond to user input without any code to handle it, or that art and programming have nothing to do with each other.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false" aria-controls="sec-3">
+        <span class="trigger-title">My Contributions</span>
+        <span class="trigger-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="accordion-body" id="sec-3" role="region">
+        <div class="accordion-content">
+          <p><strong>Tutorial and lesson writing.</strong> I wrote and edited learner-facing tutorial content: the step-by-step instructions students worked through on the platform. This involved close attention to voice, pacing, and the sequencing of reveals: which detail to give now, which to defer, and how to frame a new concept so it connected to something the student already understood. Good tutorial writing for beginners is not the same as clear technical documentation; it has to carry emotional register as well as informational content.</p>
+<p><strong>Curriculum review.</strong> I conducted a detailed review of the Creative Coding 2 course, producing written notes on the conceptual arc across units, the consistency of the hint system, platform UX issues that affected the learning experience, asset choices, naming conventions in the codebase, and places where the curriculum's implicit assumptions about prior knowledge needed to be made explicit. This kind of close reading, looking at a curriculum both as a learner moving through it and as a designer assessing its internal logic, is a distinct form of design work.</p>
+<p><strong>Standards alignment.</strong> I worked on aligning course content to CSTA K–12 Computer Science Standards at Levels 1B and 2, as well as to the AP Computer Science Principles framework. This involved not just identifying which standards a given lesson touched, but ensuring that the coverage was substantive, meaning the standard was genuinely met by what students were asked to do, not merely referenced in the documentation.</p>
+<p><strong>Partner adaptations.</strong> Two versions of the curriculum required significant adaptation work.</p>
+<p>For <strong>Girl Scouts USA</strong>, the adaptation needed to serve a different context: coding workshops that might run offline as well as online, with participants who weren't necessarily enrolled in a class. I contributed tutorial content for a JavaScript self-portrait project using the webcam, video filters, and graphical overlays, designed to give participants a complete, meaningful experience in a short session. I also worked on a World Leaders tutorial that used JavaScript objects to store and display data about notable women in computing and GSUSA history, introducing object syntax through figures students in that context were likely to find relevant: Ada Lovelace, Grace Hopper, Juliette Gordon Low.</p>
+<p>For <strong>BrainPOP</strong>, the task was adapting Vidcode's thematically agnostic coding projects into a BrainPOP-branded format, connecting coding activities to BrainPOP's existing topic library (science, history, social studies) so that the coding work extended rather than replaced BrainPOP's core content. This required understanding what BrainPOP's learners expected from the platform and where a coding project could add genuine value rather than just novelty.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false" aria-controls="sec-4">
+        <span class="trigger-title">Reflection</span>
+        <span class="trigger-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="accordion-body" id="sec-4" role="region">
+        <div class="accordion-content">
+          <p>The most interesting design problem in this work was the tension between scaffolding and open-endedness. A well-scaffolded tutorial removes obstacles and keeps students moving, but it can also remove the productive struggle that makes learning stick. The Creative Coding Challenges at the end of each unit were one answer to this: they deliberately loosened the structure to give students room to make something genuinely their own. But the transition from &quot;follow these steps&quot; to &quot;make something with what you've learned&quot; is not automatic, and it was a recurring design question how to support that transition without closing it down again.</p>
+<p>The hint system was a related challenge. A hint that simply reveals the answer trades short-term frustration relief for long-term understanding. I spent time developing a taxonomy of hint types, ranging from pertinent questions that redirected the student's attention, to partial solutions, to analogies drawn from the student's own earlier code, that tried to preserve as much of the learning value as possible while still providing real support. Whether the platform's implementation of that taxonomy was fully realized is a different question, but the underlying design thinking was sound.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <footer class="site-footer">
+      <p>Andrew Atkinson · Instructional Design Portfolio</p>
+    </footer>
+  </div>
+  <script src="../assets/js/accordion.js"></script>
+</body>
+</html>

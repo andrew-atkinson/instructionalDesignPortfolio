@@ -1,0 +1,10 @@
+{
+  "name": "instructional-design-portfolio",
+  "version": "1.0.0",
+  "description": "Andrew Atkinson — Instructional Design Portfolio",
+  "scripts": {
+    "build": "node src/md-to-portfolio.js",
+    "build:page": "node src/md-to-portfolio.js"
+  },
+  "private": true
+}
