@@ -27,12 +27,6 @@ The courses at MSU were built on that inversion. Rather than starting with conce
 
 This is the same design logic that shaped the K-12 Vidcode curriculum. Arrays are not introduced as a data structure; they are introduced as a list of things that matter to the student. The difference in a college art context is that the students arrive with a more fully developed sense of what they are trying to make, and with a higher tolerance for ambiguity and self-direction. The scaffolding can be lighter; the open-ended work can start earlier; the critical conversation about what the code is doing aesthetically and conceptually can be sustained at a higher level.
 
-## Digital Literacy: ARFD106
-
-Digital Literacy was a foundation course for art and design undergraduates, first offered in 2019. It addressed a gap that had opened up in art education: students who had grown up as sophisticated consumers and users of digital tools but had very little understanding of how those tools worked, what choices they encoded, or what it would mean to make with them rather than through them.
-
-The course covered the structure of the internet, the logic of algorithms, the design of interfaces, and the basics of HTML, CSS, and JavaScript, not as a technical survey but as a critical and practical orientation. Students built simple web pages and interactive projects, but the deeper goal was fluency: the ability to read a digital environment not just as a user but as someone who understood how it had been constructed.
-
 ## Creative Coding for Graphic Designers and for Artists
 
 The Creative Coding courses (VCDS225 for graphic design students, ARGS260 for studio arts students) were more advanced and more explicitly studio-based. They were designed as creative coding practice courses: students coded, but the work was assessed and critiqued as creative work, not evaluated as correct or incorrect solutions to technical problems.
