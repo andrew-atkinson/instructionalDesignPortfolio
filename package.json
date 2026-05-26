@@ -6,7 +6,8 @@
     "build":      "node src/md-to-portfolio.js && node src/html-to-pdf.js",
     "build:page": "node src/md-to-portfolio.js",
     "pdf":        "node src/html-to-pdf.js",
-    "pdf:page":   "node src/html-to-pdf.js"
+    "pdf:page":   "node src/html-to-pdf.js",
+    "test":       "node src/test-parser.js"
   },
   "private": true,
   "dependencies": {
