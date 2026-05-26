@@ -27,3 +27,7 @@ until you add it to this list.
 
 - cc-series
 - earth-day
+- vidcode-pd
+- msu-creative-coding
+- arfd106
+- iapc
