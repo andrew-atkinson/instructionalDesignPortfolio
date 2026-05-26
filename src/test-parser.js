@@ -50,7 +50,7 @@ function notContains(html, substring, msg) {
 
 // ── Load fixture ──────────────────────────────────────────────────────────────
 
-const fixturePath = path.join(__dirname, "content", "test-fixture.md");
+const fixturePath = path.join(__dirname, "fixtures", "test-fixture.md");
 const md     = fs.readFileSync(fixturePath, "utf8");
 const result = parsePortfolioMD(md);
 const { meta, intro, sections } = result;
