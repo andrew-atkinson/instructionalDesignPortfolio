@@ -118,35 +118,42 @@ function escapeHtml(str) {
 
 const EXT_ICON = `<svg class="ext-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 9V1h4v1H2v7h7V5h1v4H1z"/><path d="M9 1H6l1.1 1.1L4 5.2l.8.8 3.1-3.1L9 4V1z"/></svg>`;
 
-function renderInline(text) {
-  // protect bare URLs
-  const urls = [];
-  text = text.replace(/(https?:\/\/[^\s)<]+)/g, url => {
-    urls.push(url); return `\x00U${urls.length - 1}\x00`;
-  });
-
-  // markdown links
-  const links = [];
-  text = text.replace(/\[([^\]]*)\]\(([^)]+)\)/g, (_, label, href) => {
-    links.push({ label, href }); return `\x01L${links.length - 1}\x01`;
-  });
-
-  text = escapeHtml(text);
-
-  // bold + italic
+// Apply bold / italic / code patterns to an already-HTML-escaped string.
+// Used both for body text and for link label text.
+function applyFormatting(text) {
   text = text.replace(/\*\*\*([^*]+)\*\*\*/g, "<strong><em>$1</em></strong>");
   text = text.replace(/\*\*([^*]+)\*\*/g,     "<strong>$1</strong>");
   text = text.replace(/\*([^*\n]+)\*/g,        "<em>$1</em>");
   text = text.replace(/_([^_\n]+)_/g,          "<em>$1</em>");
   text = text.replace(/`([^`]+)`/g,            "<code>$1</code>");
+  return text;
+}
 
-  // restore links
+function renderInline(text) {
+  // markdown links must be captured first, before bare URL replacement
+  // runs — otherwise the URL inside [text](url) gets clobbered
+  const links = [];
+  text = text.replace(/\[([^\]]*)\]\(([^)]+)\)/g, (_, label, href) => {
+    links.push({ label, href }); return `\x01L${links.length - 1}\x01`;
+  });
+
+  // protect remaining bare URLs; strip trailing sentence punctuation
+  // so that "visit https://example.com." doesn't include the period in the href
+  const urls = [];
+  text = text.replace(/(https?:\/\/[^\s)<]+)/g, url => {
+    url = url.replace(/[.,;:!?]+$/, "");
+    urls.push(url); return `\x00U${urls.length - 1}\x00`;
+  });
+
+  text = applyFormatting(escapeHtml(text));
+
+  // restore links — apply formatting to label so _italic_ and **bold** render
   text = text.replace(/\x01L(\d+)\x01/g, (_, i) => {
     const { label, href } = links[parseInt(i)];
     const isExt = /^https?:\/\//i.test(href);
     const attrs = isExt ? ' target="_blank" rel="noopener external"' : "";
     const icon  = isExt ? EXT_ICON : "";
-    return `<a href="${escapeHtml(href)}"${attrs}>${escapeHtml(label)}${icon}</a>`;
+    return `<a href="${escapeHtml(href)}"${attrs}>${applyFormatting(escapeHtml(label))}${icon}</a>`;
   });
 
   // restore bare URLs
@@ -245,7 +252,27 @@ function renderBody(md) {
       continue;
     }
 
-    // image
+    // float-left image: !<[alt](src)
+    const imgLeft = line.match(/^!<\[([^\]]*)\]\(([^)]+)\)/);
+    if (imgLeft) {
+      flushPara(); flushUl(); flushOl();
+      const alt = escapeHtml(imgLeft[1]);
+      const src = escapeHtml(imgLeft[2]);
+      out.push(`<figure class="content-figure content-figure--left"><img src="${src}" alt="${alt}" loading="lazy"></figure>`);
+      continue;
+    }
+
+    // float-right image: !>[alt](src)
+    const imgRight = line.match(/^!>\[([^\]]*)\]\(([^)]+)\)/);
+    if (imgRight) {
+      flushPara(); flushUl(); flushOl();
+      const alt = escapeHtml(imgRight[1]);
+      const src = escapeHtml(imgRight[2]);
+      out.push(`<figure class="content-figure content-figure--right"><img src="${src}" alt="${alt}" loading="lazy"></figure>`);
+      continue;
+    }
+
+    // standard full-width image: ![alt](src)
     const imgMatch = line.match(/^!\[([^\]]*)\]\(([^)]+)\)/);
     if (imgMatch) {
       flushPara(); flushUl(); flushOl();
@@ -284,7 +311,7 @@ function parsePortfolioMD(mdText) {
   };
 }
 
-module.exports = { parsePortfolioMD, renderInline, renderBody, escapeHtml };
+module.exports = { parsePortfolioMD, renderInline, renderBody, escapeHtml, applyFormatting };
 
 // ── CLI ───────────────────────────────────────────────────────────────────────
 

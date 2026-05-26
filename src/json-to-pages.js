@@ -18,6 +18,14 @@
 const fs   = require("fs");
 const path = require("path");
 
+// ── Build date ────────────────────────────────────────────────────────────────
+
+function buildDateString() {
+  const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const d = new Date();
+  return `${d.getDate()} ${MONTHS[d.getMonth()]} ${d.getFullYear()}`;
+}
+
 // ── Asset path resolver ───────────────────────────────────────────────────────
 // Inline HTML from the parser uses root-relative paths like assets/images/...
 // This rewrites them to be correct relative to the current page depth.
@@ -180,6 +188,7 @@ function buildHomePage(json, options = {}) {
 
     <footer class="site-footer">
       <p>Andrew Atkinson · Instructional Design Portfolio</p>
+      <p class="page-updated">generated: ${buildDateString()}</p>
     </footer>
   </div>
   <script src="${rootPath}assets/js/accordion.js"></script>
@@ -223,6 +232,7 @@ function buildAboutPage(json, options = {}) {
 
     <footer class="site-footer">
       <p>Andrew Atkinson · Instructional Design Portfolio</p>
+      <p class="page-updated">generated: ${buildDateString()}</p>
     </footer>
   </div>
 </body>
@@ -272,6 +282,7 @@ function buildCaseStudyPage(json, options = {}) {
 
     <footer class="site-footer">
       <p>Andrew Atkinson · Instructional Design Portfolio</p>
+      <p class="page-updated">generated: ${buildDateString()}</p>
     </footer>
   </div>
   <script src="${rootPath}assets/js/accordion.js"></script>
