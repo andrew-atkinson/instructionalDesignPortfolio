@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>coursekit · Andrew Atkinson</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="site-wrap">
+    
+  <nav class="site-nav">
+    <a class="nav-home" href="../index.html">Andrew Atkinson</a>
+    <ul class="nav-links">
+      <li><a href="../about/">About</a></li>
+    </ul>
+  </nav>
+
+    <header class="page-header">
+      <p class="eyebrow">Case Study</p>
+      <h1>coursekit</h1>
+      <p class="subtitle">A local-first tool for authoring and auditing course content</p>
+    </header>
+
+    
+
+    <div class="case-meta">
+    <div class="meta-item">
+      <span class="meta-label">Client</span>
+      <span class="meta-value">Personal project</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Year</span>
+      <span class="meta-value">2026–present</span>
+    </div><a class="pdf-link" href="../pdf/coursekit.pdf" target="_blank">Download PDF ↓</a></div>
+
+    <div class="page-intro"><p>coursekit is a tool I began building in 2026 to close the distance between the material a course already contains and the quizzes, pages, and packaged content an LMS needs. You point it at a week's lectures, readings, or slides; it drafts the quizzes and the teaching page, checks them for pedagogical soundness, and exports them as standard Canvas, Common Cartridge, or Moodle files — without the course material ever leaving the instructor's machine. It is a working prototype: today a command-line tool for the technically comfortable, with the friendlier interface still ahead.</p>
+<p><strong>Repository:</strong> <a href="https://github.com/andrew-atkinson/quizbot" target="_blank" rel="noopener external">github.com/andrew-atkinson/quizbot<svg class="ext-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 9V1h4v1H2v7h7V5h1v4H1z"/><path d="M9 1H6l1.1 1.1L4 5.2l.8.8 3.1-3.1L9 4V1z"/></svg></a></p></div>
+
+    <div class="accordion" role="list">
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="true" aria-controls="sec-0">
+        <span class="trigger-title">The Premise</span>
+        <span class="trigger-icon" aria-hidden="true">−</span>
+      </button>
+      <div class="accordion-body open" id="sec-0" role="region">
+        <div class="accordion-content">
+          <p>Most tools in this space generate: they take a prompt and produce a quiz. But a quiz that <em>looks</em> like a quiz is easy to produce and hard to trust — it can be factually wrong, test something the course never taught, or be technically correct and pedagogically inert. coursekit is built on the premise that generation without evaluation is not useful to a teacher. So it both drafts content and <em>measures</em> whether the result is sound — reading each page and quiz back and reporting on three axes: whether it is correct, whether it holds attention and signals its structure, and whether it actually delivers each concept — as coaching rather than a pass/fail grade.</p>
+<p>The second premise is that the instructor's material is theirs. coursekit runs against a model the instructor hosts locally, so content and intellectual property stay on their own machine. Because it emits standard import files rather than pushing through a platform's API, it also works for adjunct and contingent faculty who often cannot get an LMS admin account or token at all.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false" aria-controls="sec-1">
+        <span class="trigger-title">How it works</span>
+        <span class="trigger-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="accordion-body" id="sec-1" role="region">
+        <div class="accordion-content">
+          <p>Every learning-management system speaks its own dialect, and every source document arrives in its own shape. coursekit resolves both by converging everything on a single canonical form — one neutral JSON representation per quiz bank and per page — that every exporter reads from, so adding a platform is one emitter, not a rewrite. The workflow moves through four phases: <em>ingest</em> turns documents into clean week text, <em>analyze</em> builds the concept map that grounds generation, <em>generate</em> produces the quizzes and pages, and <em>emit</em> packages the JSON into LMS files with no model involved, so the export step is deterministic and reviewable. A per-course domain profile pins every generator to the correct knowledge domain and corrects a transcript that drifts — the main defence against output that is plausible but wrong.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <footer class="site-footer">
+      <p>Andrew Atkinson · Instructional Design Portfolio</p>
+      <p class="page-updated">generated: 13 Aug 2026</p>
+    </footer>
+  </div>
+  <script src="../assets/js/accordion.js"></script>
+</body>
+</html>

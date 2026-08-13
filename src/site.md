@@ -25,9 +25,11 @@ If a case study file exists in src/content/ but is NOT listed here,
 it will still be built and linked — it just won't appear in the home page grid
 until you add it to this list.
 
-- cc-series
-- earth-day
-- vidcode-pd
+- coursekit
+- tutorgen
+- iapc
 - msu-creative-coding
 - arfd106
-- iapc
+- earth-day
+- vidcode-pd
+- cc-series
