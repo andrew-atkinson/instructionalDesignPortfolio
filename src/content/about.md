@@ -8,7 +8,7 @@ portrait: assets/images/atkinson-portrait.jpg
 
 My work sits at the intersection of art, technology, and teaching. I am an artist and educator: a photographer by training and practice, a programmer by more recent study, and a teacher for more than twenty years.
 
-I was an Assistant Professor of Digital Photography at Montclair State University from 2004, where I also directed the MFA in Studio Arts, taught photography and other studio courses, and developed and taught courses in digital arts and creative coding. My artistic practice explores digital and photographic processes; I hold a PhD from the University of the West of England on the digital recreation of nineteenth-century photographic printing methods.
+I am an Assistant Professor of Digital Photography at Montclair State University from 2004, where I also directed the MFA in Studio Arts, taught photography and other studio courses, and developed and taught courses in digital arts and creative coding. My artistic practice explores digital and photographic processes; I hold a PhD from the University of the West of England on the digital recreation of nineteenth-century photographic printing methods.
 
 In 2017, I completed a software development program at Fullstack Academy in New York. That same year I began working with Vidcode, an edtech startup whose premise was that coding and creativity belong together. The curriculum work I contributed to there ran from 2017 to 2019 and covered a three-course K-12 JavaScript sequence, a standalone Earth Day lesson, and a teacher professional development program delivered to schools in New Jersey, New Hampshire and Kansas.
 
