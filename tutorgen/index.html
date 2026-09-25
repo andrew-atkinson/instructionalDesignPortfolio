@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TutorGen · Andrew Atkinson</title>
+  <title>Preceptor · Andrew Atkinson</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
 
     <header class="page-header">
       <p class="eyebrow">Case Study</p>
-      <h1>TutorGen</h1>
+      <h1>Preceptor</h1>
       <p class="subtitle">A grounded AI teaching assistant for a creative coding course</p>
     </header>
 
@@ -37,19 +37,21 @@
       <span class="meta-value">2026–present</span>
     </div><a class="pdf-link" href="../pdf/tutorgen.pdf" target="_blank">Download PDF ↓</a></div>
 
-    <div class="page-intro"><p>TutorGen is an AI teaching assistant I built in 2026 for my own creative coding course. Students watch the lesson video and a chat panel side by side. The tutor is grounded entirely in the transcripts of the class recordings: it identifies which lessons are relevant to a question, answers in the voice of a good teaching assistant — guiding students toward a solution rather than handing it over — and cites specific moments in the video that seek the player when clicked. When it genuinely does not know, it says so and logs the question for me to review.</p>
+    <div class="page-intro"><p>Preceptor is an AI teaching assistant I built in 2026 for to support my creative coding course. I found that teaching coding online it was tricky for students to context switch between the video and their coding. Asynchronous videos help, but don't pinpoint the time, or help a student unfamiliar with the content recall the exact terms. A model can do that.</p>
+<p>Students can watch the lesson video and a chat panel side by side. The tutor is grounded entirely in the transcripts of the class recordings: it identifies which lessons are relevant to a question, answers in the voice of a good teaching assistant — guiding students toward a solution rather than handing it over — and cites specific moments in the video that seek the player when clicked. When it genuinely does not know, it says so and logs the question to review.</p>
 <p><strong>Repository:</strong> <a href="https://github.com/andrew-atkinson/creative-coding-assistant" target="_blank" rel="noopener external">github.com/andrew-atkinson/creative-coding-assistant<svg class="ext-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 9V1h4v1H2v7h7V5h1v4H1z"/><path d="M9 1H6l1.1 1.1L4 5.2l.8.8 3.1-3.1L9 4V1z"/></svg></a> · <strong>Live demo:</strong> <a href="https://teaching.andrewatkinson.net/c/creative-coding-101" target="_blank" rel="noopener external">teaching.andrewatkinson.net<svg class="ext-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 9V1h4v1H2v7h7V5h1v4H1z"/><path d="M9 1H6l1.1 1.1L4 5.2l.8.8 3.1-3.1L9 4V1z"/></svg></a></p></div>
 
     <div class="accordion" role="list">
     <div class="accordion-item">
       <button class="accordion-trigger" aria-expanded="true" aria-controls="sec-0">
-        <span class="trigger-title">The Premise</span>
+        <span class="trigger-title">The Premises</span>
         <span class="trigger-icon" aria-hidden="true">−</span>
       </button>
       <div class="accordion-body open" id="sec-0" role="region">
         <div class="accordion-content">
-          <p>The reflexive worry about AI in a coding course is that it becomes an answer machine: a student pastes an error, receives working code, and learns nothing. TutorGen takes the opposite stance. Its persona is a teaching assistant, and a good TA does not solve the problem for you — it asks what you have tried and points you at the part of the lesson that addresses it. That system prompt is doing pedagogical work.</p>
-<p>Grounding is the second premise. A general model will answer a p5.js question with Processing syntax because it optimizes for fluent text, not for what this course taught. TutorGen only knows what the course knows: its entire knowledge is the lesson transcripts, so its answers stay consistent with the tools, order, and vocabulary the students actually encountered. The third premise is honest ignorance — when it cannot ground an answer, it refuses rather than improvising, and the unanswered question becomes a curriculum signal about where the course leaves students short.</p>
+          <p>Persona: the reflexive worry about AI in higher ed is that it becomes an answer machine: a student pastes an error, receives working code, and learns less. Preceptor's persona is a teaching assistant, and a good TA does not solve the problem for you, it asks what you have tried and points you at the part of the lesson that addresses it. That system prompt is doing pedagogical work.</p>
+<p>Grounding is the second premise. The general model answered p5.js questions with Processing syntax because it optimizes for fluent text, and apparently Processing and P5 must overlap signifcantly in the model. But this is bad for a student of an intro p5.js course. Preceptor knows what the course knows: its knowledge is the lesson transcripts, so its answers stay consistent with the tools, order, and vocabulary the students actually encountered.</p>
+<p>The third premise is honest ignorance, when it cannot ground an answer, it refuses rather than improvising, and the unanswered question becomes a curriculum signal about where the course leaves students short.</p>
         </div>
       </div>
     </div>
@@ -69,7 +71,7 @@
 
     <footer class="site-footer">
       <p>Andrew Atkinson · Instructional Design Portfolio</p>
-      <p class="page-updated">generated: 13 Aug 2026</p>
+      <p class="page-updated">generated: 24 Sep 2026</p>
     </footer>
   </div>
   <script src="../assets/js/accordion.js"></script>

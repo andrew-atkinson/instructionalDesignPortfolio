@@ -1,5 +1,5 @@
 ---
-title: TutorGen
+title: Preceptor
 subtitle: A grounded AI teaching assistant for a creative coding course
 description: A teaching-assistant-voice AI tutor grounded in a creative coding course's own video transcripts — it guides students toward solutions rather than handing them over, cites the exact video moments, and logs what it can't answer for the instructor.
 type: case-study
@@ -17,15 +17,19 @@ tags:
 
 # Overview
 
-TutorGen is an AI teaching assistant I built in 2026 for my own creative coding course. Students watch the lesson video and a chat panel side by side. The tutor is grounded entirely in the transcripts of the class recordings: it identifies which lessons are relevant to a question, answers in the voice of a good teaching assistant — guiding students toward a solution rather than handing it over — and cites specific moments in the video that seek the player when clicked. When it genuinely does not know, it says so and logs the question for me to review.
+Preceptor is an AI teaching assistant I built in 2026 for to support my creative coding course. I found that teaching coding online it was tricky for students to context switch between the video and their coding. Asynchronous videos help, but don't pinpoint the time, or help a student unfamiliar with the content recall the exact terms. A model can do that.
+
+Students can watch the lesson video and a chat panel side by side. The tutor is grounded entirely in the transcripts of the class recordings: it identifies which lessons are relevant to a question, answers in the voice of a good teaching assistant — guiding students toward a solution rather than handing it over — and cites specific moments in the video that seek the player when clicked. When it genuinely does not know, it says so and logs the question to review.
 
 **Repository:** [github.com/andrew-atkinson/creative-coding-assistant](https://github.com/andrew-atkinson/creative-coding-assistant) · **Live demo:** [teaching.andrewatkinson.net](https://teaching.andrewatkinson.net/c/creative-coding-101)
 
-##! The Premise
+##! The Premises
 
-The reflexive worry about AI in a coding course is that it becomes an answer machine: a student pastes an error, receives working code, and learns nothing. TutorGen takes the opposite stance. Its persona is a teaching assistant, and a good TA does not solve the problem for you — it asks what you have tried and points you at the part of the lesson that addresses it. That system prompt is doing pedagogical work.
+Persona: the reflexive worry about AI in higher ed is that it becomes an answer machine: a student pastes an error, receives working code, and learns less. Preceptor's persona is a teaching assistant, and a good TA does not solve the problem for you, it asks what you have tried and points you at the part of the lesson that addresses it. That system prompt is doing pedagogical work.
 
-Grounding is the second premise. A general model will answer a p5.js question with Processing syntax because it optimizes for fluent text, not for what this course taught. TutorGen only knows what the course knows: its entire knowledge is the lesson transcripts, so its answers stay consistent with the tools, order, and vocabulary the students actually encountered. The third premise is honest ignorance — when it cannot ground an answer, it refuses rather than improvising, and the unanswered question becomes a curriculum signal about where the course leaves students short.
+Grounding is the second premise. The general model answered p5.js questions with Processing syntax because it optimizes for fluent text, and apparently Processing and P5 must overlap signifcantly in the model. But this is bad for a student of an intro p5.js course. Preceptor knows what the course knows: its knowledge is the lesson transcripts, so its answers stay consistent with the tools, order, and vocabulary the students actually encountered. 
+
+The third premise is honest ignorance, when it cannot ground an answer, it refuses rather than improvising, and the unanswered question becomes a curriculum signal about where the course leaves students short.
 
 ## How it works
 
